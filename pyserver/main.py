@@ -16,12 +16,12 @@ def hello():
 
 
 #serial-reading
-ser = serial.Serial('/dev/ttyACM0', 9600)
+#ser = serial.Serial('/dev/ttyACM0', 9600)
 
 
 @app.route('/sensors', methods=['GET'])
 def list_data():
-  #ser= serial.Serial('/dev/ttyACM0',9600)
+  ser= serial.Serial('/dev/ttyACM0',9600)
   read_serial = ser.readline()
   read = read_serial.strip() 
   data_to_json = json.loads(read)

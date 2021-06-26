@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 
-LIGHT_PIN = 14
+LIGHT_PIN = 4
 
 class Light(object):
  
@@ -14,7 +14,7 @@ class Light(object):
   GPIO.output(LIGHT_PIN, GPIO.HIGH)
   print('Light ON')
   sleep(10)
-  
+
 
  def turnOff(self):
   GPIO.output(LIGHT_PIN, GPIO.LOW)

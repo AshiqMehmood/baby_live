@@ -21,13 +21,12 @@ def hello():
 
 @app.route('/sensors', methods=['GET'])
 def list_data():
-  ser= serial.Serial('/dev/ttyACM0',9600)
-  read_serial = ser.readline()
-  read = read_serial.strip() 
-  data_to_json = json.loads(read)
-  #print(data)
-  return jsonify(data_to_json)
-
+   ser= serial.Serial('/dev/ttyACM0',9600)
+   read_serial = ser.readline()
+   read = read_serial.strip() 
+   data_to_json = json.loads(read)
+   #print(data)
+   return jsonify(data_to_json)
 
 @app.route('/drive', methods=['GET'])
 def run_motor():
